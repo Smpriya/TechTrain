@@ -1,0 +1,23 @@
+docker pull mysql:latest
+docker run -p 3306:3306 --name docker-mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
+
+
+
+
+sudo docker exec -i -t doker-mysql /bin/bash #by Name
+
+
+https://dkbalachandar.wordpress.com/2016/03/30/docker-file-to-deploy-a-war-file-on-tomcat/
+
+
+
+
+docker build -t mytomcat .
+
+docker run -p 8080:8080 mytomcat
+
+
+sudo docker rm -f $(docker ps -a -q)
+sudo docker rmi -f $(docker images -a -q)
+sudo docker volume rm $(docker volume ls -q)
+sudo docker network rm $(docker network ls | tail -n+2 | awk '{if($2 !~ /bridge|none|host/){ print $1 }}')

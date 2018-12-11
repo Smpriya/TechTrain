@@ -1,0 +1,1 @@
+color 2f && java -jar discovery-service\target\discovery-service.jar

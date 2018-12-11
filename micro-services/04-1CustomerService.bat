@@ -1,0 +1,1 @@
+color 1f && java -jar customer-service\target\customer-service.jar 4444

@@ -1,0 +1,1 @@
+color 6f && java -jar gateway-service\target\gateway-service.jar

@@ -1,0 +1,1 @@
+color 5f && java -jar admin-service\target\admin-service-0.0.1-SNAPSHOT.jar

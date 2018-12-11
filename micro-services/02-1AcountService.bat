@@ -1,0 +1,1 @@
+color cf && java -jar account-service\target\account-service.jar 2222
