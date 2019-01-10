@@ -10,7 +10,7 @@ import 'rxjs/add/operator/switchMap';
 const defaultM: Menu[] = [
   { id: 11, name: 'SimpleForm',url:'/simpleform' },
   { id: 12, name: 'ReactiveForm',url:'/reactiveform' },
-  { id: 14, name: 'Kabali',url:'/test4' }
+  { id: 14, name: 'پنجابی‬,',url:'/test4' }
 ]; //sform
 
 const myforms: Menu[] = [

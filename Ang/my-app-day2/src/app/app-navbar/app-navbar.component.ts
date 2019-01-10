@@ -11,7 +11,8 @@ import { AuthService } from '.././auth.service';
 })
 export class AppNavbarComponent implements OnInit {
   isLoggedIn:boolean;
-  title = 'சிலாக்கி.. டும்';
+  //title = 'சிலாக்கி.. டும்';
+  title = "विकिपीडिया == தமிழ் == پنجابی‬,";
   constructor(private authService: AuthService,private router:Router) { }
 
   ngOnInit() {

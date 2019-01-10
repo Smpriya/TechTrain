@@ -8,7 +8,8 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'சிலாக்கி.. டும்';
+  //title = 'சிலாக்கி.. டும்';
+  title = "विकिपीडिया == தமிழ் == پنجابی‬,";
   isLoggedIn:boolean;
 
   constructor(private authService: AuthService){}
