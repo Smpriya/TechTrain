@@ -81,21 +81,5 @@ Sorry for that but I'm very busy right now and don't have much time.
 
 ## External resources
 
-Dan Vega (https://twitter.com/therealdanvega) created a video that explained this project quite fine. Thanks to him!
 
-https://youtu.be/mD3vmgksvz8
 
-## Creator
-
-**Stephan Zerhusen**
-
-* <https://twitter.com/stzerhus>
-* <https://github.com/szerhusenBC>
-
-## Copyright and license
-
-The code is released under the [MIT license](LICENSE?raw=true).
-
----------------------------------------
-
-Please feel free to send me some feedback or questions!
