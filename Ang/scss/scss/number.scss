@@ -1,0 +1,42 @@
+@debug abs(10px); // 10px
+@debug abs(-10px); // 10px
+@debug quote("====================1");   
+
+@debug ceil(4); // 4
+@debug ceil(4.2); // 5
+@debug ceil(4.9); // 5
+@debug quote("====================2"); 
+
+@debug comparable(2px, 1px); // true
+@debug comparable(100px, 3em); // false
+@debug comparable(10cm, 3mm); // true
+@debug quote("====================3"); 
+
+@debug floor(4); // 4
+@debug floor(4.2); // 4
+@debug floor(4.9); // 4
+@debug quote("====================4"); 
+
+
+@debug max(1px, 4px); // 4px
+$widths: 50px, 30px, 100px;
+@debug max($widths...); // 100px
+@debug quote("====================5"); 
+
+
+@debug min(1px, 4px); // 1px
+$widths: 50px, 30px, 100px;
+@debug min($widths...); // 30px  
+@debug quote("====================6"); 
+
+@debug percentage(0.2); // 20%
+@debug percentage(100px / 50px); // 200%
+@debug quote("====================7"); 
+
+@debug random(); // 0.2821251858
+@debug random(); // 0.6221325814
+@debug quote("====================8"); 
+
+@debug random(10); // 4
+@debug random(10000); // 5373
+@debug quote("====================9"); 

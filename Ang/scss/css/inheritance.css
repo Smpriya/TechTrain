@@ -1,0 +1,18 @@
+/* This CSS will print because %message-shared is extended. */
+.message, .success, .error {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333; }
+
+.warning {
+  display: flex;
+  flex-wrap: wrap; }
+
+.success {
+  border-color: green; }
+
+.error {
+  border-color: red; }
+
+.warning {
+  border-color: yellow; }

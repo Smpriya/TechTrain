@@ -1,0 +1,11 @@
+$font-weights: ("regular": 400, "medium": 500, "bold": 700);
+
+@debug map-get($font-weights, "medium"); // 500
+@debug map-get($font-weights, "extra-bold"); // null
+
+@debug map-has-key($font-weights, "regular"); // true
+@debug map-has-key($font-weights, "bolder"); // false
+
+@debug map-keys($font-weights); // "regular", "medium", "bold"
+
+@debug map-values($font-weights); // 400, 500, 700  

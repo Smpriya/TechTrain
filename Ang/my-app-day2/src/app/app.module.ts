@@ -15,6 +15,7 @@ import { AppRoutingModule }     from './app-routing.module';
 
 import { AuthService }         from './auth.service';
 import { MenuService }         from './service/menu.service';
+import { MessageService }         from './service/message.service';
 import { ErrorLogService }         from './service/log.service';
 
 import { LoginComponent }  from './login.component'
@@ -28,6 +29,10 @@ import { EqualValidator } from './formvalidation/password.match.directive';
 
 //Global Error Handler
 import { GlobalErrorHandler } from './utils/global-error-handler';
+import { AuthGuard } from './auth-guard.service';
+
+import { HttpInterceptorProviders } from './interceptors/index';
+//import { RequestCache, RequestCacheWithMap } from './request-cache.service';
 
 @NgModule({
   declarations: [
@@ -47,6 +52,9 @@ import { GlobalErrorHandler } from './utils/global-error-handler';
     AuthService,
     MenuService,
     ErrorLogService,
+    AuthGuard,
+    MessageService,
+    HttpInterceptorProviders,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandler

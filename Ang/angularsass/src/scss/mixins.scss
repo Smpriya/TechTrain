@@ -1,0 +1,5 @@
+@mixin btn-generator($btn-color) { // take a color as a parameter
+    background-color: $btn-color;
+    padding: 12px;
+    color: #fff;
+  }

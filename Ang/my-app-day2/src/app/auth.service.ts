@@ -24,7 +24,7 @@ export class AuthService {
     const url = `${this.usersUrl}/${id}`;
     console.log("=========" + url);
     return this.http.get<User>(url).pipe(
-        retry(3),
+        retry(10),
         catchError(this.handleError));
   }
 

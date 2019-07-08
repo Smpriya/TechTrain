@@ -1,0 +1,52 @@
+// app.component.scss
+
+$backColor: brown;
+
+@import '../scss/styles';
+
+.search-button {
+    border-color: skyblue;
+    color: blue;
+
+    &:hover, &:after, &:focus {
+        background-color: transparent;
+        color: $test-color;
+        @debug 'This is a warning';
+    }
+}
+.brand-custom {
+    &:hover, &:focus, &:active {
+        background-color: transparent;
+        color:$backColor;
+    }
+}
+
+.login-custom {
+    &:hover, &:focus, &:active {
+        background-color: transparent;
+        color:$backColor !important;
+    }
+}
+
+.register-custom {
+    &:hover, &:focus, &:active {
+        background-color: transparent;
+        color:$backColor !important;
+    }
+}
+
+//@error 'This is an error';
+//@warn 'This is a warning';
+//@debug 10em + 12em;
+
+.button1 {
+    @include btn-generator(yellow);
+}
+
+.button2 {
+    @include btn-generator(blue);
+}
+
+.button3 {
+    @include btn-generator(purple);
+}

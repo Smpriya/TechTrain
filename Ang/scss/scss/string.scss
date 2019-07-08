@@ -1,0 +1,23 @@
+@debug quote(Helvetica); // "Helvetica"
+@debug quote("Helvetica"); // "Helvetica" 
+
+@debug str-index("Helvetica Neue", "Helvetica"); // 1
+@debug str-index("Helvetica Neue", "Neue"); // 11
+
+
+@debug str-insert("Roboto Bold", " Mono", 7); // "Roboto Mono Bold"
+@debug str-insert("Roboto", " Bold", 100); // "Roboto Bold"
+@debug str-insert("Bold", "Roboto ", -100); // "Roboto Bold"
+
+@debug str-length("Helvetica Neue"); // 14
+@debug str-length(bold); // 4
+@debug str-length(""); // 0
+
+@debug to-upper-case("Bold"); // "BOLD"
+@debug to-upper-case(sans-serif); // SANS-SERIF
+
+@debug unique-id(); // uabtrnzug
+@debug unique-id(); // u6w1b1def
+
+@debug unquote("Helvetica"); // Helvetica
+@debug unquote(".widget:hover"); // .widget:hover  

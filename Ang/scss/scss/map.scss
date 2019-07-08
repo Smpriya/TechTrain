@@ -1,0 +1,15 @@
+@mixin syntax-colors($args...) {
+  @debug keywords($args); // (string: #080, comment: #800, $variable: $60b)
+
+  @each $name, $color in keywords($args) {
+    pre span.stx-#{$name} {
+      color: $color;
+    }
+  }
+}
+
+@include syntax-colors(
+  $string: #080,
+  $comment: #800,
+  $variable: #60b,   
+)   

@@ -1,0 +1,46 @@
+// base.scss
+@import 'reset';
+
+$test: red;
+
+body {
+ background-color: $test;  
+}
+
+// variables
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color; 
+}
+
+//nesting
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+//mixin
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+.box {
+	@include transform(rotate(30deg));
+	}

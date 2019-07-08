@@ -40,6 +40,10 @@ export class LoginComponent implements OnInit  {
       this.isLoggedIn=false;
     }
 
+    readVal(): string {
+      return "Virtusa";
+    }
+
 
     submitForm(form: any): void{
       console.log('Form Data: ');

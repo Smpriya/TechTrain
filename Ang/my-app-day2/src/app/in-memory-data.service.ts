@@ -11,6 +11,14 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: '1', name:'SimpleForm', url: '/simpleform' }
     ];
 
-    return {users,formmenu};
+    const books = [
+        {isbn: "isbn1234567890",title :"Book on Angular",author : "Susi"},
+        {isbn: "isbn1234567888",title :"Book on Nodejsr",author : "Harsha"},
+        {isbn: "isbn1234567899",title :"Book on JakartaEE",author : "Abirami"},
+        {isbn: "isbn1234567897",title :"Chariots of the God",author : "AncientAliens"}
+      ];
+
+
+    return {users,formmenu,books};
   }
 }

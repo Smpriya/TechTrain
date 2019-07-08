@@ -11,7 +11,9 @@ export class Hero {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Virtusa-Polaris';
+  title = 'My Angular Team';
+  //title = title * 2;
+
   hero: Hero = {
 	  id: 1,
 	  name: 'Windstorm'

@@ -4,7 +4,16 @@ import { FormsModule,ReactiveFormsModule }    from '@angular/forms';
 
 import { RichUInRoutingModule } from './richui-routing.module';
 import { BootStrapformComponent }  from './bootstrapform.component';
+import {ComponentInteractionComponent} from './componentinteraction.component';
 
+import {AppBookParentComponent} from './app-book-parent.component';
+import {AppBookChildComponent} from './app-book-child.component';
+
+import {AppNameChildComponent} from './app-name-child.component';
+import {AppNameParentComponent} from './app-name-parent.component';
+import {BooksViewComponent} from './booksview.component';
+
+import {BooksService} from './books.service';
 
 @NgModule({
   imports: [
@@ -13,6 +22,15 @@ import { BootStrapformComponent }  from './bootstrapform.component';
     RichUInRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [BootStrapformComponent]
+  declarations: [
+                BootStrapformComponent,
+                ComponentInteractionComponent,
+                AppBookParentComponent,
+                AppBookChildComponent,
+                AppNameChildComponent,
+                AppNameParentComponent,
+                BooksViewComponent
+              ],
+  providers: [BooksService]
 })
 export class RichUIModule { }

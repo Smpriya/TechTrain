@@ -12,7 +12,7 @@ import { SelectivePreloadingStrategy } from './selective-preloading-strategy';
 const routes: Routes = [
   { path: 'login',  component: LoginComponent, data: { title: '..>My Login<..' } },
   { path: 'lhsnav/:id',component: SidebarComponent,outlet: 'sbar'},
-  { path: 'mainpage',  component: MainMenuComponent,canLoad: [AuthGuard] },
+  { path: 'mainpage',  component: MainMenuComponent,canActivate: [AuthGuard] },
   { path: 'sform',  redirectTo: '/simpleform' },
   { path: 'sbtstrap',  redirectTo: '/mybootstrap' },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
