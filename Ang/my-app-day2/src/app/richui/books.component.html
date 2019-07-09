@@ -2,13 +2,20 @@
   <h3>Books</h3>
   <ul class="books">
     <li *ngFor="let book of books">
-        <span>{{book.isbn}}</span>
-        <span>{{book.title}}</span>
+      <span>{{book.isbn}}</span>
+      <span>{{book.title}}</span>
     </li>
   </ul>
   <div>
     <label>Publisher: </label>
-    <input [(ngModel)]="publisher" placeholder="book">
+    <input [(ngModel)]="publisher" placeholder="book" />
+    <button
+      type="submit"
+      (click)="getUnknownUrl()"
+      class="btn btn-success btn-block"
+    >
+      Submit
+    </button>
     <div><label>Publisher: </label>{{publisher}}</div>
   </div>
 </div>
