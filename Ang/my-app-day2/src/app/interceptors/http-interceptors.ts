@@ -4,10 +4,12 @@ import {
   HttpInterceptor,
   HttpHandler,
   HttpRequest,
-  HttpErrorResponse
+  HttpErrorResponse,
+  HttpResponse
 } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, throwError } from "rxjs";
 import "rxjs/add/operator/do";
+import { catchError } from "rxjs/operators";
 //import { environment } from "path to environment/environments/environment";
 
 @Injectable()
@@ -16,17 +18,19 @@ export class ResponseInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    return next.handle(request).do(
-      (event: HttpEvent<any>) => {
-        console.log("#####In Sucess Interceptors........");
-      },
-      (err: any) => {
-        if (err instanceof HttpErrorResponse) {
-          //this.errorHandler.handleError(err);
-          console.log("#####In Error Interceptors.......");
-          console.log("err.status", err);
+    return next.handle(request).pipe(
+      catchError((error: HttpErrorResponse) => {
+        let errMsg = "";
+        // Client Side Error
+        if (error.error instanceof ErrorEvent) {
+          errMsg = `rajError: ${error.error.message}`;
+        } else {
+          // Server Side Error
+          errMsg = `rajError Code: ${error.status},  Message: ${error.message}`;
         }
-      }
+        //console.log("Thappu here..." + errMsg);
+        return throwError(errMsg);
+      })
     );
   }
 }
