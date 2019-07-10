@@ -30,7 +30,10 @@ import { EqualValidator } from "./formvalidation/password.match.directive";
 import { AuthGuard } from "./auth-guard.service";
 
 import { HttpInterceptorProviders } from "./interceptors/index";
-//import { RequestCache, RequestCacheWithMap } from './request-cache.service';
+import {
+  RequestCache,
+  RequestCacheWithMap
+} from "./service/request-cache.service";
 
 @NgModule({
   declarations: [
@@ -57,7 +60,9 @@ import { HttpInterceptorProviders } from "./interceptors/index";
     ErrorLogService,
     AuthGuard,
     MessageService,
-    HttpInterceptorProviders
+    HttpInterceptorProviders,
+    MessageService,
+    { provide: RequestCache, useClass: RequestCacheWithMap }
   ],
   bootstrap: [AppComponent]
 })
