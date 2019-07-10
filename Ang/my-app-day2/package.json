@@ -28,7 +28,8 @@
     "jquery": "^3.3.1",
     "popper": "^1.0.1",
     "punycode": "2.1.1",
-    "rxjs": "^5.5.6",
+    "rxjs": "6.5.2",
+    "rxjs-compat": "6.5.2",
     "tether": "1.4.0",
     "zone.js": "^0.8.19"
   },

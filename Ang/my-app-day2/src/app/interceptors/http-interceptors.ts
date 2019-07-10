@@ -28,7 +28,7 @@ export class ResponseInterceptor implements HttpInterceptor {
           // Server Side Error
           errMsg = `rajError Code: ${error.status},  Message: ${error.message}`;
         }
-        //console.log("Thappu here..." + errMsg);
+        console.log("Thappu here..." + errMsg);
         return throwError(errMsg);
       })
     );
