@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms"; // <-- NgMode
 
 import { Router } from "@angular/router";
 import { HttpModule } from "@angular/http";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from "angular-in-memory-web-api";
@@ -35,6 +35,13 @@ import {
   RequestCacheWithMap
 } from "./service/request-cache.service";
 
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+
+import { GlobalErrorHandler } from "./utils/global-error-handler";
+import { ServerErrorInterceptor } from "./utils/server-error.interceptor";
+
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +59,9 @@ import {
     FormvalidationModule,
     AppRoutingModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthService,
@@ -62,7 +71,13 @@ import {
     MessageService,
     HttpInterceptorProviders,
     MessageService,
-    { provide: RequestCache, useClass: RequestCacheWithMap }
+    { provide: RequestCache, useClass: RequestCacheWithMap },
+    { provide: ErrorHandler, useClass: GlobalErrorHandler },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ServerErrorInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

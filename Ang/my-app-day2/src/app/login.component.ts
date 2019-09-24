@@ -53,7 +53,9 @@ export class LoginComponent implements OnInit  {
       //console.log(form.controls['userid'].value);
       let id = form['userid'];
       console.log("===============ID==" + JSON.stringify(id));
-
+      if (id != "rajk"){
+        throw new Error('Only Interna Users are allowed');
+      }
 
       this.authService.fetchUser(id).subscribe(user => {
         this.user=user;
