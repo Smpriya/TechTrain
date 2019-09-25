@@ -298,15 +298,7 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <button (click)="get_products()">GET /products</button>
-  <hr/>
-    <ul>
-      <li *ngFor="let product of products" >
-        -- id: {{product.id}}
-        -- name: {{product.name}}
-        -- cost: {{product.cost}}
-        -- quantity: {{product.quantity}}
-      </li>
-  </ul>
+  <button (click)="get_products2()">GET /products2</button>
   <img
     width="40"
     alt="Angular Logo"
@@ -335,6 +327,25 @@
     
   </a>
 </div>
+
+  <hr/>
+    <ul>
+      <li *ngFor="let product of products" >
+        -- id: {{product.id}}
+        -- name: {{product.name}}
+        -- cost: {{product.cost}}
+        -- quantity: {{product.quantity}}
+      </li>
+  </ul>
+  
+  <hr/>
+  
+	<li *ngFor="let product of productsObservable | async" >
+        -- id-2: {{product.id}}
+        -- name-2: {{product.name}}
+        -- cost-2: {{product.cost}}
+        -- quantity-2: {{product.quantity}}
+      </li>
 
 <div class="content" role="main">
 
