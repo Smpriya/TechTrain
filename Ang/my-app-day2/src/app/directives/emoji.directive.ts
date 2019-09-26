@@ -13,7 +13,7 @@ export class EmojiDirective implements OnInit {
     this.renderer.setStyle(
       this.elmRef.nativeElement,
       "border-radius",
-      roundVal
+      roundVal   
     );
   }
 }
