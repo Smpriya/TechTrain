@@ -17,6 +17,7 @@ const myforms: Menu[] = [
   { id: 12, name: 'BootStrap',url:'/mybootstrap' },
   { id: 12, name: 'CompSpeak',url:'/component-interaction' },
   { id: 12, name: 'Interceptors',url:'/books-view' },
+  { id: 12, name: 'Emit-Catch',url:'/emit-catch' },
   { id: 12, name: 'தமிழ்',url:'/test2' },
   { id: 14, name: 'சிங்கப்பூர்',url:'/test4' }
 ];
