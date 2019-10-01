@@ -20,6 +20,9 @@ import { StockStatusComponent } from "./stockstatus.component";
 
 import { EmojiDirective } from "../directives/emoji.directive";
 
+import { AppSubjectParent } from "./app-subject-parent.component";
+import { AppSubjectChild } from "./app-subject-child.component";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -38,7 +41,9 @@ import { EmojiDirective } from "../directives/emoji.directive";
     EmitViewComponent,
     StockStatusComponent,
     MyDirectivesComponent,
-    EmojiDirective
+    EmojiDirective,
+    AppSubjectChild,
+    AppSubjectParent
   ],
   providers: [BooksService]
 })
