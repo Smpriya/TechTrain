@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7a139257bcad734d874989ab37e46178b87f9dd1" datatype="html">
+        <source>Just Welcome</source>
+        <target>Just Welcome</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Another message</note>
+        <note priority="1" from="meaning">main header</note>
+      </trans-unit>
+      <trans-unit id="welcome1" datatype="html">
+        <source>Welcomes You</source>
+        <target>Welcomes You</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Another message</note>
+        <note priority="1" from="meaning">main header1</note>
+      </trans-unit>
+      <trans-unit id="welcome2" datatype="html">
+        <source>Welcomes All!</source>
+        <target>Welcomes All!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Another message</note>
+        <note priority="1" from="meaning">main header2</note>
+      </trans-unit>
+      <trans-unit id="bd360d5d5f7b6fae01a8bff987de71b45596279d" datatype="html">
+        <source>CERN</source>
+        <target>CERN</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6b2377079997e96c6a53564c5008c4cdaae0856d" datatype="html">
+        <source>European Organization for Nuclear Research</source>
+        <target>European Organization for Nuclear Research</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e618c1c4628a8b182ae79839a73f11df829a759f" datatype="html">
+        <source>No element will be created, only a text!</source>
+        <target>No element will be created, only a text!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5f57663c051c1451f0b6302315ac6a24bfc0df7c" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {no messages} =1 {one message} few {<x id="INTERPOLATION" equiv-text="{{newMessages}}"/> messages} other {<x id="INTERPOLATION" equiv-text="{{newMessages}}"/> messages} }</source>
+        <target>{VAR_PLURAL, plural, =0 {no messages} =1 {one message} few {<x id="INTERPOLATION" equiv-text="{{newMessages}}"/> messages} other {<x id="INTERPOLATION" equiv-text="{{newMessages}}"/> messages} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
