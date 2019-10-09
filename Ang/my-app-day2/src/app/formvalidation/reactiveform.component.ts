@@ -1,70 +1,79 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
 
-import { User } from '../uimodel/data-model';
-
-
+import { User } from "../uimodel/data-model";
+import { ValidateUrl } from "../validators/url.validators";
 
 @Component({
-  selector: 'reactiveform',
-  templateUrl: './reactiveform.component.html',
-  styleUrls: [ './reactiveform.component.css' ]
+  selector: "reactiveform",
+  templateUrl: "./reactiveform.component.html",
+  styleUrls: ["./reactiveform.component.css"]
 })
-export class ReactiveformComponent  implements OnInit  {
-
+export class ReactiveformComponent implements OnInit {
   //Inject the formbuilder into the constructor
-  constructor(private fb:FormBuilder) {}
+  constructor(private fb: FormBuilder) {}
 
   //Property for the user
-  private user:User;
+  private user: User;
 
-  myage : number;
+  myage: number;
   //Gender list for the select control element
   genderList: string[];
   signupForm: FormGroup;
 
-
   ngOnInit() {
-
-    this.genderList =  ['Male', 'Female', 'Others'];
-
+    this.genderList = ["Male", "Female", "Others"];
+    // /,    twitterurl: [null];
     // Use the formbuilder to build the Form model
-    this.signupForm  = this.fb.group({
-      email: ['',[Validators.required,
-      Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+    this.signupForm = this.fb.group({
+      email: [
+        "",
+        [
+          Validators.required,
+          Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")
+        ]
+      ],
       password: this.fb.group({
-      pwd: ['', [Validators.required,
-          Validators.minLength(8)]],
-          confirmPwd: ['', [Validators.required,
-          Validators.minLength(8)]]
+        pwd: ["", [Validators.required, Validators.minLength(8)]],
+        confirmPwd: ["", [Validators.required, Validators.minLength(8)]]
       }),
-      gender: ['', Validators.required],
-      terms: ['', Validators.requiredTrue]
-    })
-
+      gender: ["", Validators.required],
+      terms: ["", Validators.requiredTrue],
+      twitterurl: ["", [Validators.required, ValidateUrl]]
+    });
   }
 
-  get email() { return this.signupForm.get('email'); }
+  get email() {
+    return this.signupForm.get("email");
+  }
 
-  get password() { return this.signupForm.get('password'); }
+  get password() {
+    return this.signupForm.get("password");
+  }
 
-  get gender() { return this.signupForm.get('gender'); }
+  get gender() {
+    return this.signupForm.get("gender");
+  }
 
-  get terms() { return this.signupForm.get('terms'); }
+  get terms() {
+    return this.signupForm.get("terms");
+  }
+
+  get twitterurl() {
+    return this.signupForm.get("twitterurl");
+  }
 
   public onFormSubmit() {
-    this.myage=0;
-    if (this.myage==0){
+    this.myage = 0;
+    if (this.myage == 0) {
       alert("hi" + this.myage);
-      throw new Error('Im errorn');
+      //throw new Error("Im errorn");
     }
 
-
-    if(this.signupForm.valid) {
+    if (this.signupForm.valid) {
       this.user = this.signupForm.value;
       console.log(this.user);
       /* Any API call logic via services goes here */
     }
   }
-
 }
