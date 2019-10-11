@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { User } from "../uimodel/data-model";
 import { ValidateUrl } from "../validators/url.validators";
+import { ageRangeValidator } from "../validators/age.validators";
 
 @Component({
   selector: "reactiveform",
@@ -20,6 +21,8 @@ export class ReactiveformComponent implements OnInit {
   //Gender list for the select control element
   genderList: string[];
   signupForm: FormGroup;
+  min = 30;
+  max = 90;
 
   ngOnInit() {
     this.genderList = ["Male", "Female", "Others"];
@@ -39,7 +42,18 @@ export class ReactiveformComponent implements OnInit {
       }),
       gender: ["", Validators.required],
       terms: ["", Validators.requiredTrue],
-      twitterurl: ["", [Validators.required, ValidateUrl]]
+      twitterurl: ["", [Validators.required, ValidateUrl]],
+      age: ["", [Validators.required, ageRangeValidator(this.min, this.max)]],
+      optionA: [],
+      optionB: [],
+      passportnumber: [
+        { value: "", disabled: true },
+        [Validators.required, Validators.minLength(3), Validators.maxLength(10)]
+      ]
+    });
+
+    this.optionA.valueChanges.subscribe(checked => {
+      checked ? this.passportnumber.enable() : this.passportnumber.disable();
     });
   }
 
@@ -61,6 +75,22 @@ export class ReactiveformComponent implements OnInit {
 
   get twitterurl() {
     return this.signupForm.get("twitterurl");
+  }
+
+  get age() {
+    return this.signupForm.get("age");
+  }
+
+  get optionA() {
+    return this.signupForm.get("optionA");
+  }
+
+  get optionB() {
+    return this.signupForm.get("optionB");
+  }
+
+  get passportnumber() {
+    return this.signupForm.get("passportnumber");
   }
 
   public onFormSubmit() {

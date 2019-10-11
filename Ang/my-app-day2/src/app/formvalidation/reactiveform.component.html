@@ -28,11 +28,68 @@
             </div>
             <!--signupForm.get('twitterurl').errors.validUrl-->
             <div
-              *ngIf="twitterurl.errors?.validUrl"
+              *ngIf="twitterurl.errors?.validUrl && twitterurl.touched"
               class="col-sm-3 text-danger"
             >
               Invalid Twitter UURRLL
             </div>
+          </div>
+
+          <div class="form-group">
+            <label
+              for="inputAge"
+              class="col-lg-2
+                control-label"
+              >Age</label
+            >
+
+            <div class="col-lg-7">
+              <input
+                type="text"
+                class="form-control"
+                id="age"
+                formControlName="age"
+                placeholder="Enter Age"
+              />
+            </div>
+            <!--signupForm.get('twitterurl').errors.validUrl-->
+            <div
+              *ngIf="age.errors?.ageRange && age.touched"
+              class="col-sm-3 text-danger"
+            >
+              Enter Valid Age (between 30 and 90)
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label
+              for="residency"
+              class="col-lg-2
+                control-label"
+              >Residency</label
+            >
+
+            <div class="col-lg-7">
+              <input type="checkbox" formControlName="optionA" /> Citizen
+              <input type="checkbox" formControlName="optionB" /> Non-Citizen
+              <!-- optionBExtra -->
+              <input
+                formControlName="passportnumber"
+                placeholder="Passport Number"
+                *ngIf="passportnumber"
+              />
+              <div
+                *ngIf="passportnumber.invalid && passportnumber.touched"
+                class="col-sm-3 text-danger"
+              >
+                Invalid Passport
+              </div>
+              <div *ngIf="passportnumber.errors?.required">
+                Passwport field can't be blank
+              </div>
+              <!--optionBExtra -->
+            </div>
+            <!--signupForm.get('twitterurl').errors.validUrl-->
           </div>
 
           <!--- Email Block -->
