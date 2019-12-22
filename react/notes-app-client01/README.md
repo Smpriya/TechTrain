@@ -1,3 +1,6 @@
+https://serverless-stack.com/chapters/handle-404s.html
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
