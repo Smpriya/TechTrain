@@ -4,24 +4,7 @@ import Table from "./Table";
 
 class App extends Component {
   state = {
-    characters: [
-      {
-        name: "Charlie",
-        job: "Janitor"
-      },
-      {
-        name: "Mac",
-        job: "Bouncer"
-      },
-      {
-        name: "Dee",
-        job: "Aspring actress"
-      },
-      {
-        name: "Dennis",
-        job: "Bartender"
-      }
-    ]
+    characters: []
   };
 
   removeCharacter = index => {
@@ -35,7 +18,7 @@ class App extends Component {
   };
 
   render() {
-    const characters = this.state;
+    const { characters } = this.state;
 
     return (
       <div className="App">
