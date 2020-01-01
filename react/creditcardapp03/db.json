@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "test",
+      "password": "test"
+    },
+    {
+      "id": 1,
+      "username": "raj",
+      "password": "raj"
+    },
+    {
+      "id": 1,
+      "username": "abi",
+      "password": "abi"
+    },
+    {
+      "id": 1,
+      "username": "harsha",
+      "password": "harsha"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
