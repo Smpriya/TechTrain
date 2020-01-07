@@ -1,6 +1,5 @@
 //import config from 'config';
 import { authHeader } from "../_helpers";
-import axios from "axios";
 
 export const userService = {
   login,
@@ -8,24 +7,22 @@ export const userService = {
   getAll
 };
 
+const url = "https://untm1.sse.codesandbox.io/";
 
-
-
-function  login(username, password) {
-  
+function login(username, password) {
   //const response =
-   // await fetch("http://localhost:4000/users?username="+username,
-    //  { headers: {'Content-Type': 'application/json'}}
-    //)
-    //console.log("=====================");
-    //console.log(await response.json());
-  
+  // await fetch("http://localhost:4000/users?username="+username,
+  //  { headers: {'Content-Type': 'application/json'}}
+  //)
+  //console.log("=====================");
+  //console.log(await response.json())
+
   //axios
-   // .get("http://localhost:4000/users?username=" + username)
-    //.then(response => {
-    //  console.log("data=");
-     // console.log(response);
-    //});
+  // .get("http://localhost:4000/users?username=" + username)
+  //.then(response => {
+  //  console.log("data=");
+  // console.log(response);
+  //});
 
   //console.log("requestOptions=");
   //console.log(requestOptions);
@@ -46,11 +43,13 @@ function  login(username, password) {
 
   //return user;
   //});
+  //new commend
+  console.log("un====" + username);
 
-  console.log("un=="+ username);
-  return fetch("http://localhost:4000/users?username="+username,
-      { headers: {'Content-Type': 'application/json'}}
-    ).then(handleResponse)
+  return fetch(url + "users?username=" + username, {
+    headers: { "Content-Type": "application/json" }
+  })
+    .then(handleResponse)
     .then(user => {
       if (user) {
         //const parsedResponse = JSON.parse(JSON.stringify(user));
@@ -59,12 +58,9 @@ function  login(username, password) {
         //console.log("######" + jsonData["id"]);
         //console.log(JSON.stringify(user));
         localStorage.setItem("user", JSON.stringify(user));
-
       }
       return user;
     });
-
-
 }
 
 function logout() {
@@ -78,9 +74,7 @@ function getAll() {
     headers: authHeader()
   };
 
-  return fetch(`http://localhost:4000/users`, requestOptions).then(
-    handleResponse
-  );
+  return fetch(url + "users", requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {
