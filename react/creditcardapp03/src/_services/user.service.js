@@ -7,7 +7,7 @@ export const userService = {
   getAll
 };
 
-const url = "https://untm1.sse.codesandbox.io/";
+const url = "http://localhost:4000/";
 
 function login(username, password) {
   //const response =
@@ -57,7 +57,14 @@ function login(username, password) {
         //console.log("######" + parsedResponse[0]["password"]);
         //console.log("######" + jsonData["id"]);
         //console.log(JSON.stringify(user));
-        localStorage.setItem("user", JSON.stringify(user));
+        user[0].authdata = window.btoa(username + ":" + password);
+        console.log("==" + user.authdata);
+        console.log("==" + JSON.stringify(user));
+        //var a = JSON.parse(user);
+        console.log("==||==" + user.length);
+        console.log("==||==" + user[0].firstname);
+        localStorage.setItem("user", JSON.stringify(user[0]));
+        console.log("Completed....1");
       }
       return user;
     });

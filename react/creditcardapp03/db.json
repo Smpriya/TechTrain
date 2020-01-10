@@ -3,22 +3,34 @@
     {
       "id": 1,
       "username": "test",
-      "password": "dharbar"
+      "password": "dharbar",
+      "firstname": "Aditya",
+      "lastname": "Arunachalam",
+      "authdata" : ""
     },
     {
       "id": 2,
       "username": "raj",
-      "password": "raj"
+      "password": "raj",
+      "firstname": "Aditya1",
+      "lastname": "Arunachalam1",
+      "authdata" : ""
     },
     {
       "id": 3,
       "username": "abi",
-      "password": "abi"
+      "password": "abi",
+      "firstname": "Aditya2",
+      "lastname": "Arunachalam2",
+      "authdata" : ""
     },
     {
       "id": 4,
       "username": "harsha",
-      "password": "harsha"
+      "password": "harsha",
+      "firstname": "Aditya3",
+      "lastname": "Arunachalam3",
+      "authdata" : ""
     }
   ],
   "comments": [

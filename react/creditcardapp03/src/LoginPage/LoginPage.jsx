@@ -22,6 +22,7 @@ class LoginPage extends React.Component {
 
   handleChange(e) {
     const { name, value } = e.target;
+    console.log("handleChange....name==" + name + ",value=" + value);
     this.setState({ [name]: value });
   }
 
