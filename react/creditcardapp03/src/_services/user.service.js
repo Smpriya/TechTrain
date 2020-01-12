@@ -10,60 +10,20 @@ export const userService = {
 const url = "http://localhost:4000/";
 
 function login(username, password) {
-  //const response =
-  // await fetch("http://localhost:4000/users?username="+username,
-  //  { headers: {'Content-Type': 'application/json'}}
-  //)
-  //console.log("=====================");
-  //console.log(await response.json())
-
-  //axios
-  // .get("http://localhost:4000/users?username=" + username)
-  //.then(response => {
-  //  console.log("data=");
-  // console.log(response);
-  //});
-
-  //console.log("requestOptions=");
-  //console.log(requestOptions);
-
-  //return fetch(
-  // "https://wjnr4.sse.codesandbox.io/users?username=" + username,
-  //requestOptions
-  //)
-  //.then(handleResponse)
-  // .then(user => {
-  // login successful if there's a user in the response
-  //  if (user) {
-  // store user details and basic auth credentials in local storage
-  // to keep user logged in between page refreshes
-  //   user.authdata = window.btoa(username + ":" + password);
-  //  localStorage.setItem("user", JSON.stringify(user));
-  //}
-
-  //return user;
-  //});
-  //new commend
   console.log("un====" + username);
 
   return fetch(url + "users?username=" + username, {
     headers: { "Content-Type": "application/json" }
-  })
-    .then(handleResponse)
+  }).then(handleResponse)
     .then(user => {
       if (user) {
-        //const parsedResponse = JSON.parse(JSON.stringify(user));
-        //var jsonData = JSON.stringify(user);
-        //console.log("######" + parsedResponse[0]["password"]);
-        //console.log("######" + jsonData["id"]);
-        //console.log(JSON.stringify(user));
         user[0].authdata = window.btoa(username + ":" + password);
         console.log("==" + user.authdata);
         console.log("==" + JSON.stringify(user));
         //var a = JSON.parse(user);
         console.log("==||==" + user.length);
         console.log("==||==" + user[0].firstname);
-        localStorage.setItem("user", JSON.stringify(user[0]));
+        localStorage.setItem("user", JSON.stringify(user));
         console.log("Completed....1");
       }
       return user;

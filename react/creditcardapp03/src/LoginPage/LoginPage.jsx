@@ -30,7 +30,7 @@ class LoginPage extends React.Component {
     e.preventDefault();
 
     this.setState({ submitted: true });
-    const { username, password, returnUrl } = this.state;
+    const { username, password } = this.state;
 
     // stop here if form is invalid
     if (!(username && password)) {
@@ -48,7 +48,11 @@ class LoginPage extends React.Component {
         this.props.history.push(from);
       },
       error => this.setState({ error, loading: false })
-    );
+    ).catch(function(error){
+      console.log("*******************");
+      //console.log(error);
+      this.props.history.push("login");
+    })
   }
 
   render() {
