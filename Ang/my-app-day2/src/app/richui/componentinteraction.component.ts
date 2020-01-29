@@ -5,7 +5,7 @@ import { NG_VALIDATORS,Validator,Validators,AbstractControl,ValidatorFn } from '
 @Component({
   selector: 'bootstraoform',
   templateUrl: './componentinteraction.component.html',
-  styleUrls: [ './componentinteraction.component.css' ]
+  styleUrls: [ './componenti.component.css' ]
 })
 export class ComponentInteractionComponent   {
 
