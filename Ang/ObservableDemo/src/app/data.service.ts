@@ -18,6 +18,10 @@ export class DataService {
 	get_products(): Observable<Product[]>{
 		return this.httpClient.get<Product[]>(this.baseUrl + '/products');
 	}
+
+	get_promise(): Promise<Product[]>{
+		return this.httpClient.get<Product[]>(this.baseUrl + '/products').toPromise();
+	}
 	
 	//get_products2(): Observable<Product[]>{
 		//return this.httpClient.get<Product[]>(this.baseUrl + '/products').pipe(filter(product[] => {
