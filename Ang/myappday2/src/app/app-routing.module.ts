@@ -15,7 +15,9 @@ const routes: Routes = [
   { path: 'mainpage',  component: MainMenuComponent,canActivate: [AuthGuard] },
   { path: 'sform',  redirectTo: '/simpleform' },
   { path: 'sbtstrap',  redirectTo: '/mybootstrap' },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'customers',  loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) }
+  
 ];
 
 @NgModule({
