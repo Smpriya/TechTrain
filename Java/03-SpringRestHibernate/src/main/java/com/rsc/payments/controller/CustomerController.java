@@ -17,7 +17,7 @@ import com.rsc.payments.service.CustomerMgrImpl;
 
 
 @RestController
-public class AccountController extends BaseController {
+public class CustomerController extends BaseController {
 
 	@Autowired
 	private CustomerMgrImpl customerService;
