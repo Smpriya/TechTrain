@@ -19,6 +19,7 @@ const myforms: Menu[] = [
   { id: 12, name: 'Interceptors',url:'/books-view' },
   { id: 12, name: 'Emit-Catch',url:'/emit-catch' },
   { id: 12, name: 'CustomerLL',url:'/customers' },
+  { id: 13, name: 'Directives',url:'/directives' },
   { id: 12, name: 'தமிழ்',url:'/test2' },
   { id: 14, name: 'சிங்கப்பூர்',url:'/test4' }
 ];

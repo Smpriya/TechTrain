@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit  {
       //console.log(form.controls['userid'].value);
       let id = form['userid'];
       console.log("===============ID==" + JSON.stringify(id));
-      if (id != "rajk"){
+      if (id != "abcd"){
         throw new Error('Only Interna Users are allowed');
       }
 

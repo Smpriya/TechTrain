@@ -6,6 +6,8 @@ import { FormValidationRoutingModule } from './formval-routing.module';
 
 import { SimpleformComponent }  from './simpleform.component';
 import { ReactiveformComponent }  from './reactiveform.component';
+import { DirectivesComponent } from './directives.component';
+import { AlertDirective } from './alert.directives';
 
 @NgModule({
   imports: [
@@ -14,6 +16,6 @@ import { ReactiveformComponent }  from './reactiveform.component';
     FormValidationRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [SimpleformComponent,ReactiveformComponent]
+  declarations: [SimpleformComponent,ReactiveformComponent,DirectivesComponent,AlertDirective]
 })
 export class FormvalidationModule { }
