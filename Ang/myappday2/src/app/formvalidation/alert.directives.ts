@@ -16,14 +16,14 @@ export class AlertDirective implements OnInit {
     error1:string;
 
     constructor(private elementRef:ElementRef,private renderer:Renderer2){
-        elementRef.nativeElement.style.background='grey';
+        elementRef.nativeElement.style.background='lightblue';
     }
 
     ngOnInit(): void {
-        const div = this.renderer.createElement('div');
-        const text = this.renderer.createText(this.error1);
-        this.renderer.addClass(div,'divr');
-        this.renderer.appendChild(div,text);
+        const div = this.renderer.createElement('div'); //<div></div>
+        const text = this.renderer.createText(this.error1);  
+        this.renderer.addClass(div,'divr'); //<div class="divr"></div>
+        this.renderer.appendChild(div,text);//<div class="divr">Message here</div>
         this.renderer.appendChild(this.elementRef.nativeElement,div);
         this.title = "Please Try Again";
         

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit  {
     }
 
     readVal(): string {
-      return "Virtusa";
+      return "Test";
     }
 
 
