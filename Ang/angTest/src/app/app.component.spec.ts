@@ -70,6 +70,9 @@ describe('AppComponent', () => {
 
     expect(service.isAuthenticated).toHaveBeenCalled();
 
+    console.log("===1" + component.needsLogin());
+    console.log("===2" + service.isAuthenticated());
+
   });
 
   it('Needs Login v2', () => {
@@ -82,5 +85,23 @@ describe('AppComponent', () => {
 
   });
 
+
+  it('New Method Called DoSomething in my Service Class', () => {
+    
+    spy = spyOn(service,"doSomething").and.callThrough();
+    //spy = spyOn(service,"doSomething").and.returnValue(45);
+    
+    expect(component.checkAdd(4,5)).toEqual(9);
+
+  });
+
+  it('Negative  Method Called DoSomething in my Service Class', () => {
+    
+    spy = spyOn(service,"doSomething").and.callThrough();
+    //spy = spyOn(service,"doSomething").and.returnValue(45);
+    
+    expect(component.checkAdd(0,-1)).toEqual(-1);
+
+  });
 
 });

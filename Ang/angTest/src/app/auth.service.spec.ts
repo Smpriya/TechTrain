@@ -25,7 +25,8 @@ describe('AuthService', () => {
   });
 
   it('should return false from isAuthenticated when there is a token', () => {
-    expect(service.isAuthenticated()).toBeFalsy();
+    console.log("service.isAuthenticated() when no token.." + service.isAuthenticated())
+        expect(service.isAuthenticated()).toBeFalsy();
   });
 
 });

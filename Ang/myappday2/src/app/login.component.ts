@@ -54,7 +54,8 @@ export class LoginComponent implements OnInit  {
       let id = form['userid'];
       console.log("===============ID==" + JSON.stringify(id));
       if (id != "abcd"){
-        throw new Error('Only Interna Users are allowed');
+        //throw new Error('Only Interna Users are allowed');
+        throw new Error("{'err':'Only Interna Users are allowed','mod':'login'}");
       }
 
       this.authService.fetchUser(id).subscribe(user => {

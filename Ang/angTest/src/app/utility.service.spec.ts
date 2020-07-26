@@ -46,7 +46,7 @@ describe('UtilityService', () => {
           id: "4",
           name: "asdf",
           role: "tester",
-          tech: "selenium"
+          tech: "selenium123"
         },
       ];
 
@@ -62,7 +62,7 @@ describe('UtilityService', () => {
 
     });
 
-    it('test case 2..', () => {
+    it('test case 2-without spyon..', () => {
       const userresponse = [
         {
           id: "1",

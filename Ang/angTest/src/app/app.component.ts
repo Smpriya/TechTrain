@@ -19,4 +19,10 @@ export class AppComponent {
     return !this.auth.isAuthenticated();
   }
 
+  checkAdd(x:number,y:number) {
+    return this.auth.doSomething(x,y);
+  }
+
+
+
 }

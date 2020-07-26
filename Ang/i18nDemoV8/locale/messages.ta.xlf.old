@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="7a139257bcad734d874989ab37e46178b87f9dd1" datatype="html">
         <source>Just Welcome</source>
-        <target>જસ્ટ વેલકમ</target>
+        <target>வெறும் வரவேற்பு</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">9</context>
@@ -14,7 +14,7 @@
       </trans-unit>
       <trans-unit id="welcome1" datatype="html">
         <source>Welcomes You</source>
-        <target>આપનું સ્વાગત છે</target>
+        <target>வரவேற்கிறது்</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">10</context>
@@ -22,56 +22,46 @@
         <note priority="1" from="description">Another message</note>
         <note priority="1" from="meaning">main header1</note>
       </trans-unit>
-      <trans-unit id="fundsTransfer" datatype="html">
-        <source>FundsTransfer</source>
-        <target>ફંડ્સ ટ્રાન્સફર</target>
+      <trans-unit id="welcome2" datatype="html">
+        <source>Welcomes All!</source>
+        <target>உங்கள் அனைவரையும் வரவேற்கிறோம்</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">11</context>
-        </context-group>
-        <note priority="1" from="description">Account Number while doing the fund transfer</note>
-        <note priority="1" from="meaning">CorporateBankPortal</note>
-      </trans-unit>
-      <trans-unit id="welcome2" datatype="html">
-        <source>Welcomes All!</source>
-        <target>ફંડ્સ ટ્રાન્સફર</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">12</context>
         </context-group>
         <note priority="1" from="description">Another message</note>
         <note priority="1" from="meaning">main header2</note>
       </trans-unit>
       <trans-unit id="bd360d5d5f7b6fae01a8bff987de71b45596279d" datatype="html">
         <source>CERN</source>
-        <target>ફંડ્સ ટ્રાન્સફર</target>
+        <target>இஸ்ரோ்</target>்
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6b2377079997e96c6a53564c5008c4cdaae0856d" datatype="html">
         <source>European Organization for Nuclear Research</source>
-        <target>ફંડ્સ ટ્રાન્સફર</target>
+        <target>இந்திய விண்வெளி ஆய்வு மையம்</target>்
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e618c1c4628a8b182ae79839a73f11df829a759f" datatype="html">
         <source>No element will be created, only a text!</source>
-        <target>ફંડ્સ ટ્રાન્સફર</target>
+        <target>தமிழ்நாடு இந்திய மாநிலங்களில் பரப்பளவில் 11 ஆவதாகவும், மக்கள்தொகையில் ஏழாவதாகவும் விளங்குகிறது</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5f57663c051c1451f0b6302315ac6a24bfc0df7c" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no messages} =1 {one message} few {<x id="INTERPOLATION" equiv-text="{{newMessages}}"/> messages} other {<x id="INTERPOLATION" equiv-text="{{newMessages}}"/> messages} }</source>
-        <target>{VAR_PLURAL, plural, =0 {எதுவும் இல்லை} =1 {ஒரு பொருள் உள்ளது} few {<x id="INTERPOLATION" equiv-text="{{newMessages}}"/> இருக்கு இல்லை } other {<x id="INTERPOLATION" equiv-text="{{newMessages}}"/> இன்னும் பல உள்ளன} }</target>  
+        <target>{VAR_PLURAL, plural, =0 {எதுவும் இல்லை} =1 {ஒரு பொருள் உள்ளது} few {<x id="INTERPOLATION" equiv-text="{{newMessages}}"/> இருக்கு இல்லை } other {<x id="INTERPOLATION" equiv-text="{{newMessages}}"/> இன்னும் பல உள்ளன} }</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
     </body>

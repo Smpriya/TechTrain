@@ -9,6 +9,9 @@ export class GlobalErrorHandler implements ErrorHandler {
   constructor(private injector: Injector) {}
 
   handleError(error: Error | HttpErrorResponse) {
+
+    
+
     const errorService = this.injector.get(ErrorService);
     const logger = this.injector.get(LoggingService);
     const notifier = this.injector.get(NotificationService);
@@ -28,5 +31,8 @@ export class GlobalErrorHandler implements ErrorHandler {
     // Always log errors
     logger.logError(message, stackTrace);
     console.error(error);
+    //this.datacom.posterrr(error).subscribe(()={
+      //nothing
+    //})
   }
 }

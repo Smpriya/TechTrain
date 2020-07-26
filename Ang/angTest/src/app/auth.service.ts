@@ -11,4 +11,9 @@ export class AuthService {
     return !!localStorage.getItem("token");
   }
 
+  //dummy method
+  doSomething(x:number,y:number){
+    return x+y;
+  }
+
 }

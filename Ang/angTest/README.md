@@ -1,3 +1,3 @@
-ng test --reported html
+ng test --reporters html
 
 ng test --codeCoverage=true
