@@ -2,6 +2,8 @@ package com.rsc.payments.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import com.rsc.payments.repo.CustomerDAOImpl;
 
 
 @Service
+@Transactional
 public class CustomerMgrImpl implements CustomerMgr {
 
 	@Autowired

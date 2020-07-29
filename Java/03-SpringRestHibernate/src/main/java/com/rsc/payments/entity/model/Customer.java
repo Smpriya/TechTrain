@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 import com.sun.istack.NotNull;
 
@@ -32,7 +33,7 @@ public class Customer extends BaseEntity {
 	@Column(name="lastname")
 	private String lastName;
 	
-	@Column(name="email")
+	@Column(name="email",unique = true)
 	private String email;
 	
 	@Column(name="phnumber")

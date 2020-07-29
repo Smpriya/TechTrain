@@ -1,26 +1,23 @@
 package com.rsc.payments.entity.model;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+@MappedSuperclass
 public class BaseEntity implements Serializable {
-	
-
-	
+		
 	private String createdBy;
 	
 	@Temporal(TemporalType.DATE)
-	private String createdDate;
+	private Calendar createdDate;
 	
-//	public long getId() {
-//		return id;
-//	}
-
 	public String getCreatedBy() {
 		return createdBy;
 	}
@@ -29,11 +26,11 @@ public class BaseEntity implements Serializable {
 		this.createdBy = createdBy;
 	}
 
-	public String getCreatedDate() {
+	public Calendar getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(String createdDate) {
+	public void setCreatedDate(Calendar createdDate) {
 		this.createdDate = createdDate;
 	}
 
