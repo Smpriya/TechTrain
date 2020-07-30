@@ -8,5 +8,5 @@ import com.rsc.payments.entity.model.Customer;
 public interface CustomerMgr {
 	public List<Customer> getAllCustomers();
 	public void createCustomer(Customer cust);
-	public List<Customer> fetcCustomerByCustomerID(int customerId);
+	public Customer fetcCustomerByCustomerID(int customerId);
 }

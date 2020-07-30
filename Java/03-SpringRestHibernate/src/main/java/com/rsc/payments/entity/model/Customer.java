@@ -25,7 +25,7 @@ public class Customer extends BaseEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private int id;
 	
 	@Column(name="firstname")
 	private String firstName;
@@ -104,11 +104,11 @@ public class Customer extends BaseEntity {
 		this.lstAccounts = lstAccounts;
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

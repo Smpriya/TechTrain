@@ -31,9 +31,9 @@ public class CustomerMgrImpl implements CustomerMgr {
 	}
 
 	@Override
-	public List<Customer> fetcCustomerByCustomerID(int customerId) {
+	public Customer fetcCustomerByCustomerID(int l) {
 		// TODO Auto-generated method stub
-		return customerDao.fetcCustomerByCustomerID(customerId);
+		return customerDao.fetcCustomerByCustomerID(l).stream().findFirst().orElse(new Customer());
 	}
 	
 

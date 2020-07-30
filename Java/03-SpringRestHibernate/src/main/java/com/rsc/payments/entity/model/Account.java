@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,7 +18,7 @@ public class Account extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column(name = "acctnbr")
+	@Column(name = "acctnbr",unique = true)
 	private String accountNumber;
 
 	private String acctType;
@@ -31,6 +32,9 @@ public class Account extends BaseEntity {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Customer cust;
+	
+	@OneToOne
+	private AccountDetails acctDetails;
 	
 	public String getAccountNumber() {
 		return accountNumber;
@@ -80,7 +84,21 @@ public class Account extends BaseEntity {
 		this.id = id;
 	}
 
+	public Customer getCust() {
+		return cust;
+	}
 
+	public void setCust(Customer cust) {
+		this.cust = cust;
+	}
+
+	public AccountDetails getAcctDetails() {
+		return acctDetails;
+	}
+
+	public void setAcctDetails(AccountDetails acctDetails) {
+		this.acctDetails = acctDetails;
+	}
 
 	
 }

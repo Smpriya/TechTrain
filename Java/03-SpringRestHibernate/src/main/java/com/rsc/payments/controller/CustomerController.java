@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rsc.payments.entity.model.Account;
@@ -17,6 +18,7 @@ import com.rsc.payments.service.CustomerMgrImpl;
 
 
 @RestController
+@RequestMapping("api")
 public class CustomerController extends BaseController {
 
 	@Autowired
@@ -24,12 +26,14 @@ public class CustomerController extends BaseController {
 	
 	@GetMapping(value = "/customers", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Customer>> getCustomers() {
+		System.out.println("=====data..." + customerService.getAllCustomers());
 		return new ResponseEntity<List<Customer>>(customerService.getAllCustomers(),HttpStatus.OK);
 	}
 	
 	@PostMapping(value = "/customer", produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Boolean> createCustomer(@RequestBody Customer cust) {
+	public ResponseEntity<Customer> createCustomer(@RequestBody Customer cust) {
 		customerService.createCustomer(cust);
-		return new ResponseEntity<Boolean>(Boolean.TRUE,HttpStatus.OK);
+		Customer custResult = customerService.fetcCustomerByCustomerID(cust.getId()); 
+		return new ResponseEntity<Customer>(custResult,HttpStatus.OK);
 	}
 }
