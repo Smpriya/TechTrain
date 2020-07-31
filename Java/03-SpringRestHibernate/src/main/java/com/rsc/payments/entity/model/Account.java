@@ -1,11 +1,13 @@
 package com.rsc.payments.entity.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -30,11 +32,12 @@ public class Account extends BaseEntity {
 
 	private String branchCode;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	private Customer cust;
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	private Customer cust;
 	
-	@OneToOne
-	private AccountDetails acctDetails;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "actdetails_id", referencedColumnName = "id")
+	private AccountDetail acctDetails;
 	
 	public String getAccountNumber() {
 		return accountNumber;
@@ -84,21 +87,24 @@ public class Account extends BaseEntity {
 		this.id = id;
 	}
 
-	public Customer getCust() {
-		return cust;
-	}
+//	public Customer getCust() {
+//		return cust;
+//	}
+//
+//	public void setCust(Customer cust) {
+//		this.cust = cust;
+//	}
 
-	public void setCust(Customer cust) {
-		this.cust = cust;
-	}
-
-	public AccountDetails getAcctDetails() {
+	public AccountDetail getAcctDetails() {
 		return acctDetails;
 	}
 
-	public void setAcctDetails(AccountDetails acctDetails) {
+	public void setAcctDetails(AccountDetail acctDetails) {
 		this.acctDetails = acctDetails;
 	}
+
+	
+
 
 	
 }
