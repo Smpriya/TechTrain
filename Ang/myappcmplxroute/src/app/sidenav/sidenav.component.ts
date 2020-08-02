@@ -34,6 +34,8 @@ export class SidenavComponent implements OnInit {
 
 
   ngOnInit(): void {
+    //http://localhost:4200/lhsnav?id=fundstransfer
+    //http://localhost:4200/lhsnav?id=Demat
     this.route.params.subscribe(params => {
       this.type = params['id']||''; // (+) converts string 'id' to a number
       console.log("===================input.."+this.type);
