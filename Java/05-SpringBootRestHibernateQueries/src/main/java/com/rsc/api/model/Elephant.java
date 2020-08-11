@@ -15,5 +15,10 @@ public class Elephant extends Animal {
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
+
+	@Override
+	public String toString() {
+		return "Elephant [weight=" + weight + "]";
+	}
 	
 }

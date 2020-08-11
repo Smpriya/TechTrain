@@ -1,6 +1,7 @@
 package com.rsc.api;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +12,18 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.rsc.api.model.Animal;
+import com.rsc.api.model.Bat;
 import com.rsc.api.model.Car;
+import com.rsc.api.model.Elephant;
 import com.rsc.api.model.Fuel;
 import com.rsc.api.model.Jeep;
+import com.rsc.api.service.AnimalServiceManager;
 import com.rsc.api.service.AutoMobileServiceManager;
 import com.rsc.api.service.AutoMobileServiceManagerImpl;
+import com.sun.xml.bind.v2.model.core.Element;
+
+import javassist.expr.Instanceof;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = HibernateJpaAutoConfiguration.class)
@@ -24,6 +32,9 @@ public class Application {
 	@Autowired
 	private AutoMobileServiceManager autoMobileServiceManagerImpl;
 
+	@Autowired
+	private AnimalServiceManager animalServiceManagerImpl;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
@@ -56,10 +67,38 @@ public class Application {
 			jp1.setManfDate(new Date());
 			jp1.setSellingDate(new Date());
 
-			autoMobileServiceManagerImpl.createAutoMobile(c1);
-			autoMobileServiceManagerImpl.createAutoMobile(jp1);
-			// userRepository.save(new User("John"));
-			// userRepository.save(new User("Rambo"));
+			//autoMobileServiceManagerImpl.createAutoMobile(c1);
+			//autoMobileServiceManagerImpl.createAutoMobile(jp1);
+			
+			Bat bat = new Bat();
+			bat.setName("Indian bat");
+			bat.setSpecies("Zynclovia");
+			
+			Elephant elp1 = new Elephant();
+			elp1.setSpecies("Asian");
+			elp1.setWeight(150);
+			
+			Elephant elp2 = new Elephant();
+			elp2.setSpecies("Afreican");
+			elp2.setWeight(170);
+			
+			//animalServiceManagerImpl.createAutoMobile(bat);
+			//animalServiceManagerImpl.createAutoMobile(elp1);
+			//animalServiceManagerImpl.createAutoMobile(elp2);
+			
+			List<Animal> animals = animalServiceManagerImpl.getAnimals();
+			for(int i=0;i<animals.size();i++) {
+				System.out.println(animals.get(i));
+				if ( animals.get(i) instanceof Bat) {
+					System.out.println("CAR...");
+				}
+				
+				if ( animals.get(i) instanceof Elephant) {
+					System.out.println("Elephant...");
+				}
+				
+			}
+			
 		};
 	}
 }
