@@ -1,5 +1,6 @@
 package com.rsc.api;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,9 +16,12 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.rsc.api.model.Address;
 import com.rsc.api.model.Animal;
+import com.rsc.api.model.AutoParts;
 import com.rsc.api.model.Bat;
 import com.rsc.api.model.Car;
+import com.rsc.api.model.Citizen;
 import com.rsc.api.model.Elephant;
 import com.rsc.api.model.EngineCamShaft;
 import com.rsc.api.model.EnginePiston;
@@ -141,9 +145,68 @@ public class Application {
 			engSprkPlg1.setName("Maruti");
 			engSprkPlg1.setVolt(120);
 
-			autoPartsManagerImpl.createAutoParts(ecamshft1);
-			autoPartsManagerImpl.createAutoParts(ep1);
-			autoPartsManagerImpl.createAutoParts(engSprkPlg1);
+			//autoPartsManagerImpl.createAutoParts(ecamshft1);
+			//autoPartsManagerImpl.createAutoParts(ep1);
+			//autoPartsManagerImpl.createAutoParts(engSprkPlg1);
+			
+			List<AutoParts> aParts = autoPartsManagerImpl.getAutoParts();
+			for(AutoParts ap : aParts) {
+				System.out.println(ap);
+				if (ap instanceof EnginePiston) {
+					System.out.println("...Engine Piston...");
+				}
+				if (ap instanceof EngineSparkPlug) {
+					System.out.println("...Engine SparkPlug...");
+				}
+				if (ap instanceof EngineCamShaft) {
+					System.out.println("...Engine CamShaft...");
+				}
+			}
+			
+			System.out.println("=========================================");
+			Citizen ctzn = new Citizen();
+			ctzn.setEmail("abcd@gmail.com");
+			ctzn.setName("Test123Name");
+			
+			List lstAdress= new ArrayList();
+			for(int i=0;i<20;i++) {
+				Address adres = new Address();
+				adres.setAddress1(System.currentTimeMillis() + "Line 1...");
+				adres.setAddress2("Address..2");
+				adres.setCity("Chennai" + System.currentTimeMillis());
+				if ((i % 2) == 0) {
+					adres.setCountry("India");	
+				} else {
+					adres.setCountry("France");
+				}
+				Thread.sleep(1500);
+				adres.setPincode(System.currentTimeMillis()+"");
+				
+				lstAdress.add(adres);
+			}
+			
+			Address adres = new Address();
+			adres.setAddress1("Line 1...");
+			adres.setAddress2("Address..2");
+			adres.setCity("Chennai");
+			adres.setCountry("India");
+			adres.setPincode("600352");
+			
+			//Address adres1 = new Address();
+			//adres1.setAddress1("New Line 1...");
+			//adres1.setAddress2("New Address..2");
+			//adres1.setCity("Bangalore");
+			//adres1.setCountry("Singapore");
+			//adres1.setPincode("242154");
+			
+			
+			//lstAdress.add(adres);
+			//lstAdress.add(adres1);
+			
+			ctzn.setAddress(lstAdress);
+			
+			//animalServiceManagerImpl.save(ctzn);
+			
 		};
 	}
 }

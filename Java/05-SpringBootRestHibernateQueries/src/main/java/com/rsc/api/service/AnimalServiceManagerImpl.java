@@ -11,6 +11,7 @@ import com.rsc.api.model.Animal;
 import com.rsc.api.model.Bat;
 import com.rsc.api.model.Elephant;
 import com.rsc.api.repo.AnimalDAOImpl;
+import com.rsc.api.repo.hql.AnimalHQLDAO;
 
 @Service
 @Transactional
@@ -18,6 +19,9 @@ public class AnimalServiceManagerImpl implements AnimalServiceManager {
 	
 	@Autowired
 	AnimalDAOImpl repo;
+	
+	@Autowired
+	AnimalHQLDAO repoHql;
 
 	@Override
 	public void createAutoMobile(Animal am) {
@@ -41,6 +45,18 @@ public class AnimalServiceManagerImpl implements AnimalServiceManager {
 	public List<Bat> getBats() {
 		// TODO Auto-generated method stub
 		return repo.getBats();
+	}
+	
+	@Override
+	public void save(Object obj) {
+		// TODO Auto-generated method stub
+		repoHql.save(obj);
+	}
+
+	@Override
+	public List getQueryJoin() {
+		// TODO Auto-generated method stub
+		return repoHql.getJoinedData();
 	}
 
 }

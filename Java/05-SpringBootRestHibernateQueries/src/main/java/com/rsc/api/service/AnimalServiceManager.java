@@ -14,4 +14,8 @@ public interface AnimalServiceManager {
 	public List<Elephant> getElephants();
 
 	public List<Bat> getBats();
+	
+	public void save(Object obj);
+	
+	public List getQueryJoin();
 }
