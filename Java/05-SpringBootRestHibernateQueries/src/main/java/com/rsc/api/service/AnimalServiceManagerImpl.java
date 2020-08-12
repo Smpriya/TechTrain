@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rsc.api.model.Animal;
+import com.rsc.api.model.Bat;
+import com.rsc.api.model.Elephant;
 import com.rsc.api.repo.AnimalDAOImpl;
 
 @Service
@@ -27,6 +29,18 @@ public class AnimalServiceManagerImpl implements AnimalServiceManager {
 	public List<Animal> getAnimals() {
 		// TODO Auto-generated method stub
 		return repo.getAnimals();
+	}
+
+	@Override
+	public List<Elephant> getElephants() {
+		// TODO Auto-generated method stub
+		return repo.getElephants();
+	}
+
+	@Override
+	public List<Bat> getBats() {
+		// TODO Auto-generated method stub
+		return repo.getBats();
 	}
 
 }

@@ -3,6 +3,9 @@ package com.rsc.api;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -16,11 +19,15 @@ import com.rsc.api.model.Animal;
 import com.rsc.api.model.Bat;
 import com.rsc.api.model.Car;
 import com.rsc.api.model.Elephant;
+import com.rsc.api.model.EngineCamShaft;
+import com.rsc.api.model.EnginePiston;
+import com.rsc.api.model.EngineSparkPlug;
 import com.rsc.api.model.Fuel;
 import com.rsc.api.model.Jeep;
 import com.rsc.api.service.AnimalServiceManager;
 import com.rsc.api.service.AutoMobileServiceManager;
 import com.rsc.api.service.AutoMobileServiceManagerImpl;
+import com.rsc.api.service.AutoPartsManager;
 import com.sun.xml.bind.v2.model.core.Element;
 
 import javassist.expr.Instanceof;
@@ -34,6 +41,9 @@ public class Application {
 
 	@Autowired
 	private AnimalServiceManager animalServiceManagerImpl;
+	
+	@Autowired
+	private AutoPartsManager autoPartsManagerImpl;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -90,7 +100,7 @@ public class Application {
 			for(int i=0;i<animals.size();i++) {
 				System.out.println(animals.get(i));
 				if ( animals.get(i) instanceof Bat) {
-					System.out.println("CAR...");
+					System.out.println("BAT...");
 				}
 				
 				if ( animals.get(i) instanceof Elephant) {
@@ -98,7 +108,42 @@ public class Application {
 				}
 				
 			}
+			//@Inheritance(strategy = InheritanceType.JOINED)
+			System.out.println("=========================================");
+			List<Elephant> eleph = animalServiceManagerImpl.getElephants();
+			System.out.println(eleph);
 			
+			System.out.println("=========================================");
+			List<Bat> bats = animalServiceManagerImpl.getBats();
+			System.out.println(bats);
+			
+			//Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+			System.out.println("=========================================");
+			
+			EngineCamShaft ecamshft1 = new EngineCamShaft();
+			ecamshft1.setLenght(45);
+			ecamshft1.setManufacturer("Mannar&Mannar");
+			ecamshft1.setName("Mannar");
+			ecamshft1.setNoOfJumps(5);
+			ecamshft1.setType("Diesel Engine");
+			
+			EnginePiston ep1 = new EnginePiston();
+			ep1.setDiameter(35);
+			ep1.setIs4Stroke(false);
+			ep1.setLength(85);
+			ep1.setManufacturer("Pattrai");
+			ep1.setName("2 stroke piston");
+			
+			EngineSparkPlug engSprkPlg1 = new EngineSparkPlug();
+			engSprkPlg1.setFuel(Fuel.DIESEL);
+			engSprkPlg1.setLength(105);
+			engSprkPlg1.setManufacturer("Maruthi");
+			engSprkPlg1.setName("Maruti");
+			engSprkPlg1.setVolt(120);
+
+			autoPartsManagerImpl.createAutoParts(ecamshft1);
+			autoPartsManagerImpl.createAutoParts(ep1);
+			autoPartsManagerImpl.createAutoParts(engSprkPlg1);
 		};
 	}
 }
