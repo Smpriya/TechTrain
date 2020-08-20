@@ -21,29 +21,31 @@ import org.keycloak.adapters.KeycloakConfigResolver;
 @EnableGlobalMethodSecurity(jsr250Enabled = true)
 public class KeycloakSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 	@Override
-    protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
-        http.authorizeRequests()
-            .anyRequest()
-            .permitAll();
-        http.csrf().disable();
-    }
+	protected void configure(HttpSecurity http) throws Exception {
+		super.configure(http);
+		http.authorizeRequests()
+				.antMatchers("/test/anonymous").permitAll()
+				.antMatchers("/test/user").hasAnyRole("user")
+				.antMatchers("/test/admin").hasAnyRole("admin")
+				.antMatchers("/test/all-user").hasAnyRole("user", "admin").anyRequest().permitAll();
+		http.csrf().disable();
+	}
 
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        KeycloakAuthenticationProvider keycloakAuthenticationProvider = keycloakAuthenticationProvider();
-        keycloakAuthenticationProvider.setGrantedAuthoritiesMapper(new SimpleAuthorityMapper());
-        auth.authenticationProvider(keycloakAuthenticationProvider);
-    }
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+		KeycloakAuthenticationProvider keycloakAuthenticationProvider = keycloakAuthenticationProvider();
+		keycloakAuthenticationProvider.setGrantedAuthoritiesMapper(new SimpleAuthorityMapper());
+		auth.authenticationProvider(keycloakAuthenticationProvider);
+	}
 
-    @Bean
-    @Override
-    protected SessionAuthenticationStrategy sessionAuthenticationStrategy() {
-        return new RegisterSessionAuthenticationStrategy(new SessionRegistryImpl());
-    }
+	@Bean
+	@Override
+	protected SessionAuthenticationStrategy sessionAuthenticationStrategy() {
+		return new RegisterSessionAuthenticationStrategy(new SessionRegistryImpl());
+	}
 
-    @Bean
-    public KeycloakConfigResolver KeycloakConfigResolver() {
-        return new KeycloakSpringBootConfigResolver();
-    }
+	@Bean
+	public KeycloakConfigResolver KeycloakConfigResolver() {
+		return new KeycloakSpringBootConfigResolver();
+	}
 }

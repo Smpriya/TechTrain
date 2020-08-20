@@ -1,6 +1,6 @@
 docker run -p 9090:8080 -e KEYCLOAK_USER=root -e KEYCLOAK_PASSWORD=root jboss/keycloak
 
-https://medium.com/devops-dudes/securing-spring-boot-rest-apis-with-keycloak-1d760b2004e
+rhttps://medium.com/devops-dudes/securing-spring-boot-rest-apis-with-keycloak-1d760b2004e
 
 Token end point
 "http://localhost:9090/auth/realms/Demo-Realm/protocol/openid-connect/token"
