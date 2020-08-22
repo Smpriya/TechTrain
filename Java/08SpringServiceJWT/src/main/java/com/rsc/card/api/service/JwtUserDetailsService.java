@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.rsc.card.api.model.DAOUser;
+import com.rsc.card.api.model.UserDTO;
 import com.rsc.card.api.repo.UserDao;
 
 @Service
@@ -31,6 +33,13 @@ public class JwtUserDetailsService implements UserDetailsService {
 		} else {
 			throw new UsernameNotFoundException("User not found with username: " + username);
 		}
+	}
+	
+	public UserDao save(UserDTO user) {
+		DAOUser newUser = new DAOUser();
+		newUser.setUsername(user.getUsername());
+		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
+		return userDao.save(newUser);
 	}
 
 }
