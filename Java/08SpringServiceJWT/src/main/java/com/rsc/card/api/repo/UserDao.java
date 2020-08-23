@@ -11,5 +11,5 @@ import com.rsc.card.api.model.DAOUser;
 
 @Repository
 public interface UserDao extends JpaRepository<DAOUser, Integer> {
-
+	DAOUser findByUsername(String username);
 }

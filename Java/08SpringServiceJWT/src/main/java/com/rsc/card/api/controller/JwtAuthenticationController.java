@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rsc.card.api.config.JwtTokenUtil;
 import com.rsc.card.api.model.JwtRequest;
 import com.rsc.card.api.model.JwtResponse;
+import com.rsc.card.api.model.UserDTO;
 import com.rsc.card.api.service.JwtUserDetailsService;
 
 @RestController
@@ -41,6 +42,11 @@ public class JwtAuthenticationController {
 		final String token = jwtTokenUtil.generateToken(userDetails);
 
 		return ResponseEntity.ok(new JwtResponse(token));
+	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
+		return ResponseEntity.ok(userDetailsService.save(user));
 	}
 	
 	private void authenticate(String username, String password) throws Exception {
