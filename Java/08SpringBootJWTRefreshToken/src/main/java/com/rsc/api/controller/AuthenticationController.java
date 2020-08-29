@@ -40,19 +40,31 @@ public class AuthenticationController {
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest)
 			throws Exception {
+		System.out.println("=========0");
+		
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
 					authenticationRequest.getUsername(), authenticationRequest.getPassword()));
+			System.out.println("=========00");
 		} catch (DisabledException e) {
 			throw new Exception("USER_DISABLED", e);
 		}
 		catch (BadCredentialsException e) {
 			throw new Exception("INVALID_CREDENTIALS", e);
 		}
-		
+		System.out.println("=========1");
 		UserDetails userdetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+		System.out.println("=========2");
+		
 		String token = jwtUtil.generateToken(userdetails);
-		return ResponseEntity.ok(new AuthenticationResponse(token));
+		System.out.println("=========3");
+		
+		AuthenticationResponse auth = new AuthenticationResponse();
+		auth.setToken(token);
+		System.out.println("roles..." + userdetails.getAuthorities());
+		auth.setRoles(userdetails.getAuthorities()+"");
+
+		return ResponseEntity.ok(auth);
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -62,6 +74,7 @@ public class AuthenticationController {
 	
 	@RequestMapping(value = "/refreshtoken", method = RequestMethod.GET)
 	public ResponseEntity<?> refreshtoken(HttpServletRequest request) throws Exception {
+		System.out.println("==============RefreshToken===");
 		// From the HttpRequest get the claims
 		DefaultClaims claims = (io.jsonwebtoken.impl.DefaultClaims) request.getAttribute("claims");
 

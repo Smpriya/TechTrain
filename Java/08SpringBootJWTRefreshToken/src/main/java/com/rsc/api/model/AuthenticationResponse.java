@@ -2,11 +2,10 @@ package com.rsc.api.model;
 
 public class AuthenticationResponse {
 	private String token;
+
+	private String roles;
 	
-	public AuthenticationResponse()
-	{
-		
-	}
+	public AuthenticationResponse() {}
 
 	public AuthenticationResponse(String token) {
 		super();
@@ -19,5 +18,13 @@ public class AuthenticationResponse {
 
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+	public String getRoles() {
+		return roles;
+	}
+
+	public void setRoles(String roles) {
+		this.roles = roles;
 	}
 }

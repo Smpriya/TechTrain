@@ -50,6 +50,7 @@ public class CustomJwtAuthenticationFilter extends OncePerRequestFilter  {
 		 }catch(ExpiredJwtException ex)
 		 {
 			 String isRefreshToken = request.getHeader("isRefreshToken");
+			 System.out.println("=====================" + isRefreshToken);
 				String requestURL = request.getRequestURL().toString();
 				// allow for Refresh Token creation if following conditions are true.
 				if (isRefreshToken != null && isRefreshToken.equals("true") && requestURL.contains("refreshtoken")) {

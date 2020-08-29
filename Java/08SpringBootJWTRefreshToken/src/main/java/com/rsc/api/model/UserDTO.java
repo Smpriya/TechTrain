@@ -3,13 +3,13 @@ package com.rsc.api.model;
 public class UserDTO {
 	private String username;
 	private String password;
-	private String role;
+	private String[] role;
 
-	public String getRole() {
+	public String[] getRole() {
 		return role;
 	}
 
-	public void setRole(String role) {
+	public void setRole(String[] role) {
 		this.role = role;
 	}
 
