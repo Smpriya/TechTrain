@@ -41,6 +41,16 @@ export class SecureComponent implements OnInit {
    //     () => console.log("Processing Complete."));
   }
 
+  public getc(){
+    this.common.getCountries().subscribe((res: Country[]) => {
+      this.countries = res;
+      console.log("====Country=====" + JSON.stringify(this.countries));
+    },
+      err => {
+        console.error("Error in Observable==" + JSON.stringify(err));
+      },
+      () => console.log("Processing Complte."));
+  }
     
 
 }
