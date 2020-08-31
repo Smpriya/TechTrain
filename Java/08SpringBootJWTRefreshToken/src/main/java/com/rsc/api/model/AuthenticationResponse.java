@@ -3,7 +3,7 @@ package com.rsc.api.model;
 public class AuthenticationResponse {
 	private String token;
 
-	private String roles;
+	private String[] roles;
 	
 	public AuthenticationResponse() {}
 
@@ -20,11 +20,11 @@ public class AuthenticationResponse {
 		this.token = token;
 	}
 
-	public String getRoles() {
+	public String[] getRoles() {
 		return roles;
 	}
 
-	public void setRoles(String roles) {
+	public void setRoles(String[] roles) {
 		this.roles = roles;
 	}
 }

@@ -13,6 +13,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,6 +27,8 @@ import com.rsc.api.service.CustomUserDetailsService;
 
 import io.jsonwebtoken.impl.DefaultClaims;
 
+//@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+//@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class AuthenticationController {
 	@Autowired
@@ -37,6 +40,7 @@ public class AuthenticationController {
 	@Autowired
 	private JwtUtil jwtUtil;
 
+	//@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest)
 			throws Exception {
@@ -61,8 +65,15 @@ public class AuthenticationController {
 		
 		AuthenticationResponse auth = new AuthenticationResponse();
 		auth.setToken(token);
-		System.out.println("roles..." + userdetails.getAuthorities());
-		auth.setRoles(userdetails.getAuthorities()+"");
+		
+		System.out.println("roles..." + userdetails.getAuthorities().toArray()[0].toString());
+		
+		String[] rle = new String[userdetails.getAuthorities().toArray().length];
+		for(int i=0;i<userdetails.getAuthorities().toArray().length;i++) {
+			rle[i] =  userdetails.getAuthorities().toArray()[i].toString();
+		}
+		
+		auth.setRoles(rle);
 
 		return ResponseEntity.ok(auth);
 	}
