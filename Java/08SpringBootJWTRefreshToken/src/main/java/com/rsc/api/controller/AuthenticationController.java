@@ -62,7 +62,7 @@ public class AuthenticationController {
 		
 		String token = jwtUtil.generateToken(userdetails);
 		System.out.println("=========3");
-		
+		  
 		AuthenticationResponse auth = new AuthenticationResponse();
 		auth.setToken(token);
 		
