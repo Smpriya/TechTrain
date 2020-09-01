@@ -3,6 +3,8 @@ import { CommonService } from '../common.service';
 import { Country } from '../country';
 import { ResolveStart } from '@angular/router';
 import { HttpHeaders } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
+import { of, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-secure',
@@ -41,16 +43,27 @@ export class SecureComponent implements OnInit {
    //     () => console.log("Processing Complete."));
   }
 
+ 
+
   public getc(){
-    this.common.getCountries().subscribe((res: Country[]) => {
+    this.common.getCountries().pipe(
+      map((response:Country[]) => {
+        //this.countries = response;
+        return response;
+      }),
+      catchError(error => {
+        //this.router.navigate(['newpage']);
+        console.log(error);
+        return Observable.throw(error);
+      })
+    ).subscribe((res:Country[])=>{
       this.countries = res;
-      console.log("====Country=====" + JSON.stringify(this.countries));
+      console.log("=========================");
     },
-      err => {
-        console.error("Error in Observable==" + JSON.stringify(err));
-      },
-      () => console.log("Processing Complte."));
+    err => {
+      console.error("Error in Observable==" + JSON.stringify(err));
+    },
+    () => console.log("Processing Complte."));
   }
-    
 
 }

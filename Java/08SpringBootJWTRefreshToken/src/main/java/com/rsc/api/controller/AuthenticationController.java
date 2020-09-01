@@ -88,7 +88,9 @@ public class AuthenticationController {
 		System.out.println("==============RefreshToken===");
 		// From the HttpRequest get the claims
 		DefaultClaims claims = (io.jsonwebtoken.impl.DefaultClaims) request.getAttribute("claims");
-
+		//System.out.println("==token==" + request.getAttribute("authorization"));
+		//getClaimsFromJWT
+		System.out.println("====================Claims in RT is.." + request.getAttribute("claims"));
 		Map<String, Object> expectedMap = getMapFromIoJsonwebtokenClaims(claims);
 		String token = jwtUtil.doGenerateRefreshToken(expectedMap, expectedMap.get("sub").toString());
 		return ResponseEntity.ok(new AuthenticationResponse(token));

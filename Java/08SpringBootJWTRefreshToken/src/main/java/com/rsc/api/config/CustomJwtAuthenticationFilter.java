@@ -44,6 +44,7 @@ public class CustomJwtAuthenticationFilter extends OncePerRequestFilter  {
 				// that the current user is authenticated. So it passes the
 				// Spring Security Configurations successfully.
 				SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+				//request.setAttribute("claims", jwtTokenUtil.getClaimsFromJWT(jwtToken));
 			} else {
 				System.out.println("Cannot set the Security Context");
 			}
@@ -76,9 +77,26 @@ public class CustomJwtAuthenticationFilter extends OncePerRequestFilter  {
 		SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
 		// Set the claims so that in controller we will be using it to create
 		// new JWT
+		System.out.println("=======setting claims====" + ex.getClaims());
 		request.setAttribute("claims", ex.getClaims());
 
 	}
+	
+//	private void allowForRefreshToken(HttpServletRequest request,String token) {
+//
+//		// create a UsernamePasswordAuthenticationToken with null values.
+//		UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+//				null, null, null);
+//		// After setting the Authentication in the context, we specify
+//		// that the current user is authenticated. So it passes the
+//		// Spring Security Configurations successfully.
+//		SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+//		// Set the claims so that in controller we will be using it to create
+//		// new JWT
+//		//System.out.println("=======setting claims====" + ex.getClaims());
+//		request.setAttribute("claims", jwtTokenUtil.getClaimsFromJWT(token));
+//
+//	}
 
 	private String extractJwtFromRequest(HttpServletRequest request) {
 		String bearerToken = request.getHeader("Authorization");

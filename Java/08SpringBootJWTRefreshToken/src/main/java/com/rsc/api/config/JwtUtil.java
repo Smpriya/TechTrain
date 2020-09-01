@@ -47,8 +47,8 @@ public class JwtUtil {
 	public String generateToken(UserDetails userDetails) {
 		Map<String, Object> claims = new HashMap<>();
 
-		Collection<? extends GrantedAuthority> roles = userDetails.getAuthorities();
-
+		Collection<? extends GrantedAuthority> roles = userDetails.getAuthorities();   	
+System.out.println("=========generateToken=" + roles.toString());
 		if (roles.contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
 			claims.put("isAdmin", true);
 		}
@@ -108,5 +108,9 @@ public class JwtUtil {
 		}
 		return roles;
 
+	}
+	
+	public Claims getClaimsFromJWT(String token) {
+		return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
 	}
 }

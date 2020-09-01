@@ -20,11 +20,18 @@ export class CommonService {
   public getCountries():Observable<Country[]>{
     let token = sessionStorage.getItem("token");
     console.log("Token==" + token);
-    let headers:HttpHeaders = new  HttpHeaders().
-      set("authorization", "Bearer " + token);
+    //let headers:HttpHeaders = new  HttpHeaders().
+     // set("authorization", "Bearer " + token);
 
-    return this.httpc.get<Country[]>(this.url,{headers}).pipe(
-      retry(10),
+      const httpHeaders: HttpHeaders = new HttpHeaders({
+        'authorization': `Bearer ${token}`,
+        'No-Auth': 'True',
+        'Content-Type': 'application/json'
+      });
+
+
+    return this.httpc.get<Country[]>(this.url,{headers:httpHeaders}).pipe(
+      retry(5),
     );
   }
 
@@ -33,6 +40,8 @@ export class CommonService {
     console.log("Token==" + token);
     let headers:HttpHeaders = new  HttpHeaders().
       set("authorization", "Bearer " + token);
+
+
 
       
     //return this.httpc.get<any>(this.testurl,{headers});
