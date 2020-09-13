@@ -45,7 +45,7 @@ export class AlertDirective implements OnInit {
     onMouseLeave(event) {
         console.log(event);
         this.renderer.setStyle(this.elementRef.nativeElement,"transform","scale(1)");
-        this.hightight("green");
+        this.hightight("lightblue");
     }
 
     private hightight(color:string){

@@ -140,6 +140,16 @@ describe('UtilityService', () => {
       expect(response).toEqual(userresponse);
     });
 
+    it('test addnumbers funtions',()=>{
+      let result = service.addnumbers(1,2);
+      expect(result).toEqual(53);
+    })
+
+    it('test addnumbers funtions > 20',()=>{
+      let result = service.addnumbers(22,2);
+      expect(result).toEqual(44);
+    })
+
 
   });
 

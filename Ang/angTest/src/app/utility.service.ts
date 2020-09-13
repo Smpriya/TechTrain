@@ -6,6 +6,23 @@ import { of, Observable } from 'rxjs';
 })
 export class UtilityService {
 
+  public addnumbers(x:number,y:number):number {
+    let result = 0;
+    let message = "";
+
+    if (x>20) {
+      result = 20;
+      message = "number greater than 20";
+      console.log(message);
+    } else {
+      result = 50;
+    }
+
+    result = x+y + result;
+
+    return result;
+  }
+
   public users:Array<object> = [
     {
       id:"1",

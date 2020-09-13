@@ -1,0 +1,26 @@
+body {
+    background-color: grey;
+}
+p {
+    color: darkgreen;
+  }
+p.special {
+    color :yellow;
+}
+.outer {
+    border: 5px solid black;
+}
+.box {
+    padding: 10px;
+    width: calc(90% - 100px);
+    background-color: rebeccapurple;
+    color: white;
+}
+
+.rbox {
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    transform: rotate(0.8turn)
+  }
