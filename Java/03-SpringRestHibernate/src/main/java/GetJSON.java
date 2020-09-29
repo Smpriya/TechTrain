@@ -22,6 +22,7 @@ public class GetJSON {
 		cust.setLastName("lastname");
 		cust.setPhonenumber("1234567890");
 		cust.setTimeofOpening(Calendar.getInstance());
+		cust.setLstAccounts(acts);
 		
 		Gson gson = new Gson();
 		String j = gson.toJson(cust);
@@ -59,13 +60,13 @@ public class GetJSON {
 		actDtls.setLocked(false);
 		
 		act1.setAcctDetails(actDtls);
-		
+		act2.setAcctDetails(actDtls);
 		//cust.setLstAccounts(acts);
 		
-		String jj = gson.toJson(cust);
-		System.out.println(jj);
+		//String jj = gson.toJson(cust);
+		//System.out.println(jj);
 		
-		System.out.println(gson.toJson(act1));
+		//System.out.println(gson.toJson(cust));
 		
 		/*{
 			  "id": 0,

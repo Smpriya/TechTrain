@@ -30,6 +30,11 @@ public class AutoMobileController extends BaseController {
 		return new ResponseEntity<List<Car>>(serviceAutoMobile.getCars(),HttpStatus.OK);
 	}
 	
+	@GetMapping(value = "/automobies", produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<AutoMobile>> getAllAutoMobiles() {
+		return new ResponseEntity<List<AutoMobile>>(serviceAutoMobile.getAllAutoMobiles(),HttpStatus.OK);
+	}
+	
 	@PostMapping(value = "/car", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Boolean> createCar(@RequestBody Car car) {
 		serviceAutoMobile.createAutoMobile(car);

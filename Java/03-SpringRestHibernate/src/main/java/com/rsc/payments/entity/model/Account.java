@@ -32,8 +32,8 @@ public class Account extends BaseEntity {
 
 	private String branchCode;
 	
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	private Customer cust;
+	//@ManyToOne(fetch = FetchType.LAZY)
+	//private Customer cust;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "actdetails_id", referencedColumnName = "id")

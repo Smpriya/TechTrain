@@ -29,6 +29,12 @@ public class AutoMobileDAOImpl extends AutoMobileDAO {
 		Query qry = session.createQuery("from Car",Car.class);
 		return qry.list();
 	}
+	
+	public List<AutoMobile> getAllAutoMobiles() {
+		Session session = sessionFactory.getCurrentSession();
+		Query qry = session.createQuery("from com.rsc.api.model.AutoMobile",AutoMobile.class);
+		return qry.list();
+	}
 
 	public Car fetchCarByID(int Id) {
 		Session session = sessionFactory.getCurrentSession();

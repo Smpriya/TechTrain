@@ -13,4 +13,6 @@ public interface AutoMobileMgr {
 
 	public Car fetchCarByID(int Id);
 	
+	public List<AutoMobile> getAllAutoMobiles();
+	
 }

@@ -64,7 +64,7 @@ class CustomerControllerTest extends AbstractTest {
 		cust1.setAddress("addres123");
 		cust1.setCreatedBy("isha");
 		cust1.setCreatedDate(Calendar.getInstance());
-		cust1.setEmail("rsc@rsc.com");
+		cust1.setEmail("isha123@rsc.com");
 		cust1.setFirstName("Siva");
 		cust1.setLastName("kumar");
 		cust1.setPhonenumber("1234567899");
@@ -89,7 +89,7 @@ class CustomerControllerTest extends AbstractTest {
 	
 	@Test
 	public void getCustomerbyId() throws Exception {
-		String uri = "/api/customer/68";
+		String uri = "/api/customer/6";
 		
 		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
 				.accept(MediaType.APPLICATION_JSON_VALUE))
@@ -107,7 +107,7 @@ class CustomerControllerTest extends AbstractTest {
 
 	@Test
 	public void getCustomerbyIdExp() throws Exception {
-		String uri = "/api/customer/68";
+		String uri = "/api/customer/6";
 		
 		System.out.println("============================start");
 		

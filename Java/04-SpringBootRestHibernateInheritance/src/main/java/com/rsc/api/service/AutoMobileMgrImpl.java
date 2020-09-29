@@ -36,6 +36,12 @@ public class AutoMobileMgrImpl implements AutoMobileMgr {
 		// TODO Auto-generated method stub
 		return repoAuto.fetchCarByID(Id);
 	}
+
+	@Override
+	public List<AutoMobile> getAllAutoMobiles() {
+		// TODO Auto-generated method stub
+		return repoAuto.getAllAutoMobiles();
+	}
 	
 	
 

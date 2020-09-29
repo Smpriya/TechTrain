@@ -23,9 +23,9 @@ public class CustomerDAOImpl extends CustomerDAO {
 		return qry.list();	
 	}
 	
-	public void createCustomer(Customer act){
+	public void createCustomer(Customer cust){
 		Session session = sessionFactory.getCurrentSession();
-		session.save(act);	
+		session.save(cust);	
 	}
 	
 	public List<Customer> fetcCustomerByCustomerID(int customerId){

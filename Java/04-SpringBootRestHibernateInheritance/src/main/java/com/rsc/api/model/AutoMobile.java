@@ -11,7 +11,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 
-//https://www.baeldung.com/database-auditing-jpa
 @MappedSuperclass
 public class AutoMobile {
 	

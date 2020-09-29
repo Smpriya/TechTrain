@@ -44,7 +44,7 @@ public class Customer extends BaseEntity {
 	@Temporal(TemporalType.DATE)
 	private Calendar timeofOpening;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name = "cust_id")
 	private List<Account> lstAccounts;
 	
