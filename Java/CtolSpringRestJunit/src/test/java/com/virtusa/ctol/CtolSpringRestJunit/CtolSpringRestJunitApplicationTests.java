@@ -1,4 +1,4 @@
-package com.virtusa.ctol.CtolSpringRestJunit;
+package com.vrtsa.ctol.CtolSpringRestJunit;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

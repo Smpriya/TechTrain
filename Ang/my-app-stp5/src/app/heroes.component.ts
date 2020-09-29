@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 
 export class HeroesComponent implements OnInit {
 
-  title = "Virtusa";
+  title = "vrtsa";
 
   heroes: Hero[];
 

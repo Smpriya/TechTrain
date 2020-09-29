@@ -16,7 +16,7 @@ public class PersonRestService {
         persons = new ArrayList<>();
         persons.add(new Person("Hello", "World"));
         persons.add(new Person("Foo", "Bar"));
-        persons.add(new Person("dlf", "My Virtusa"));
+        persons.add(new Person("dlf", "My vrtsa"));
     }
 
     @RequestMapping(path = "/persons", method = RequestMethod.GET)

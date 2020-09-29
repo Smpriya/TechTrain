@@ -1,4 +1,4 @@
-package com.virtusa.myapp.micro_services;
+package com.vrtsa.myapp.micro_services;
 
 /**
  * Hello world!

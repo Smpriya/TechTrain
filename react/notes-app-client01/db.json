@@ -1,6 +1,6 @@
 {
   "users": [
-    { "id": 1, "username": "virtusa", "password": "virtusa12345" },
+    { "id": 1, "username": "vrtsa", "password": "vrtsa12345" },
     { "id": 1, "username": "dell", "password": "dell12345" },
     { "id": 1, "username": "polaris", "password": "polaris12345" }
   ],

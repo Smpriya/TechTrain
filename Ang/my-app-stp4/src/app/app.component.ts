@@ -12,7 +12,7 @@ import { HeroService } from './hero.service';
 
 export class AppComponent implements OnInit {
 
-  title = "Virtusa";
+  title = "vrtsa";
 
   heroes: Hero[];
 

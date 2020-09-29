@@ -8,7 +8,7 @@
 		<version>2.1.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.virtusa.ctol</groupId>
+	<groupId>com.vrtsa.ctol</groupId>
 	<artifactId>CtolSpringRestJunit</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CtolSpringRestJunit</name>

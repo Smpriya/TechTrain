@@ -1,4 +1,4 @@
-package com.virtusa.spring.mvc.rest.security.springrestsecurity;
+package com.vrtsa.spring.mvc.rest.security.springrestsecurity;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
