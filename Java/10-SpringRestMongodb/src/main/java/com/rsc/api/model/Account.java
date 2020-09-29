@@ -26,6 +26,11 @@ public class Account {
 	public void setAccNbr(String accNbr) {
 		this.accNbr = accNbr;
 	}
+
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", accNbr=" + accNbr + "]";
+	}
 	
 	
 

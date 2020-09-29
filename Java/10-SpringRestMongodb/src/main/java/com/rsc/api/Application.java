@@ -57,7 +57,7 @@ public class Application implements CommandLineRunner {
 		cust.setCustType(custType);
 		cust.setFirstName("SuperStar");
 		cust.setLastName("Rajinikanth");
-		service.saveCustomer(cust);
+		//service.saveCustomer(cust);
 		
 		
 		for(int i=0;i<5;i++) {
@@ -67,7 +67,8 @@ public class Application implements CommandLineRunner {
 			//cust.setCustType(custType);
 			cust1.setFirstName("SuperStar" + i);
 			cust1.setLastName("Rajinikanth"  +1);
-			service.saveCustomer(cust1);
+			cust1.setAccounts(lstAccounts);
+			//service.saveCustomer(cust1);
 		}
 		
 	

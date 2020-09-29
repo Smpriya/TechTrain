@@ -27,5 +27,10 @@ public class CustomerType {
 		this.description = description;
 	}
 
+	@Override
+	public String toString() {
+		return "CustomerType [id=" + id + ", description=" + description + "]";
+	}
+
 	
 }
