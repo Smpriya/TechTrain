@@ -1,0 +1,41 @@
+db.createCollection("mycol")
+db.mycol.insert([
+	{
+		title: "MongoDB Overview",
+		description: "MongoDB is no SQL database",
+		by: "tutorials point",
+		url: "http://www.tutorialspoint.com",
+		tags: ["mongodb", "database", "NoSQL"],
+		likes: 100
+	}])
+
+
+db.mycol.insert([
+	{
+		title: "MongoDB Overview1",
+		description: "MongoDB is no SQL database",
+		by: "tutorials point",
+		url: "http://www.tutorialspoint.com",
+		tags: ["mongodb", "database", "NoSQL"],
+		likes: 200
+	},{
+		title: "MongoDB Overview2",
+		description: "MongoDB is no SQL database",
+		by: "tutorials point",
+		url: "http://www.tutorialspoint.com",
+		tags: ["mongodb", "database", "NoSQL"],
+		likes: 300
+	}])
+
+
+db.mycol.find()
+
+
+db.mycol.find().pretty()
+
+db.mycol.findOne()
+
+db.mycol.find({"by":"tutorials point"}).pretty()
+db.mycol.find({"likes":{$lte:50}}).pretty()
+db.mycol.find({"likes":{$gt:50}}).pretty()
+db.mycol.find({"tags":{$in:["mongodb"]}}).pretty()

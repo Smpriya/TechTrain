@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Auth } from './auth';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { retry, catchError,map } from 'rxjs/operators';
 import { Authresponse } from './authresponse';
@@ -19,8 +19,15 @@ export class AuthService {
 
   doAuth(a:Auth) : Observable<Authresponse> {
     return this.httpc.post<Authresponse>(this.authurl,a).pipe(
-      //retry(5), // retry a failed request up to 3 times
+      retry(5), // retry a failed request up to 3 times
       //this.startRefreshTokenTimer();
+      catchError((error: HttpErrorResponse) => {
+        //if (error.status !== 401) {
+          // 401 handled in auth.interceptor
+          console.log("%%%%%%" + error.status);      
+        //}
+        return throwError(error);
+      }),
       map((auth:Authresponse)=>{
         console.log("#1 Service.." + auth.token);
         sessionStorage.setItem("token",auth.token);
