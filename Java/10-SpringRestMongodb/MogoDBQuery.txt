@@ -39,3 +39,10 @@ db.mycol.find({"by":"tutorials point"}).pretty()
 db.mycol.find({"likes":{$lte:50}}).pretty()
 db.mycol.find({"likes":{$gt:50}}).pretty()
 db.mycol.find({"tags":{$in:["mongodb"]}}).pretty()
+db.mycol.find({$and:[{"by":"tutorials point"},{"title": "MongoDB Overview"}]}).pretty()
+
+
+
+
+
+1067dfe273fd0fd466d7d0f3c0118263a49cf21f
