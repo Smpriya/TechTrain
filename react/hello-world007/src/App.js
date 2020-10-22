@@ -19,6 +19,10 @@ import UserGreeting from './components/UserGreeting';
 import NameList from './components/NameList';
 import NameListObject from './components/NameListObject';
 import StyleSheet from './components/StyleSheet';
+import InLine from './components/InLine';
+import './appStyles.css';
+import styles from './appStyles.module.css';
+import Form from './components/Form';
     
 function App() {
   return (
@@ -67,6 +71,13 @@ function App() {
      <NameListObject></NameListObject>
      <hr></hr>
      <StyleSheet primary={true}></StyleSheet>
+     <hr></hr>
+     <InLine></InLine>
+     <hr></hr>
+     <h1 className='error'>Error Data</h1>
+     <h1 className={styles.sucess}>Sucess Data</h1>
+     <hr></hr>
+     <Form></Form>
     </div>
   );
 }
