@@ -23,6 +23,7 @@ import InLine from './components/InLine';
 import './appStyles.css';
 import styles from './appStyles.module.css';
 import Form from './components/Form';
+import LifeCycleA from './components/LifeCycleA';
     
 function App() {
   return (
@@ -78,6 +79,8 @@ function App() {
      <h1 className={styles.sucess}>Sucess Data</h1>
      <hr></hr>
      <Form></Form>
+     <hr></hr>
+     <LifeCycleA></LifeCycleA>
     </div>
   );
 }
