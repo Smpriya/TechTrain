@@ -24,6 +24,14 @@ import './appStyles.css';
 import styles from './appStyles.module.css';
 import Form from './components/Form';
 import LifeCycleA from './components/LifeCycleA';
+import FragmentDemo from './components/FragmentDemo';
+import FragTable from './components/FragTable';
+import PureComp from './components/PureComponent';
+import RegularComp from './components/RegularComp';
+import NewParentComponent from './components/NewParentComponent';
+import RefDemo from './components/RefDemo';
+import FocusInput from './components/FocusInput';
+import FwdRefParent from './components/FwdRefParent';
     
 function App() {
   return (
@@ -81,6 +89,18 @@ function App() {
      <Form></Form>
      <hr></hr>
      <LifeCycleA></LifeCycleA>
+     <hr></hr>
+     <FragmentDemo></FragmentDemo>
+     <hr></hr>
+     <FragTable></FragTable>
+     <hr></hr>
+     <NewParentComponent></NewParentComponent>
+     <hr></hr>
+     <RefDemo></RefDemo>
+     <hr></hr>
+     <FocusInput/>
+     <hr></hr>
+     <FwdRefParent/>
     </div>
   );
 }
